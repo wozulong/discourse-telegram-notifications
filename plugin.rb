@@ -183,7 +183,7 @@ after_initialize do
   User.register_custom_field_type('telegram_chat_id', :text)
   register_editable_user_custom_field :telegram_chat_id
 
-  DiscourseEvent.on(:post_notification_alert) do |user, payload|
+  DiscourseEvent.on(:push_notification) do |user, payload|
     if SiteSetting.telegram_notifications_enabled?
       Jobs.enqueue(:send_telegram_notifications, user_id: user.id, payload: payload)
     end
