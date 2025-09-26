@@ -7,6 +7,7 @@ plugins:
     default: ''
     hidden: true
   telegram_bot_username:
+    client: true
     default: ''
   telegram_enabled_notification_types:
     type: list
