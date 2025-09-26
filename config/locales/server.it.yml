@@ -2,7 +2,7 @@ it:
   site_settings:
     telegram_notifications_enabled: Abilitare le notifiche da telegram?
     telegram_access_token: Ottieni il token per l'accesso del tuo bot da botfather di telegram
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "Per ricevere notifiche da %{site_title}, inserisci lo 'Chat ID' %{chat_id} nelle tue preferenze utente"
     known-user: |-
      Ciao %{username}, ti invierò un messaggio quando riceverai nuove notifiche da %{site_title}. 

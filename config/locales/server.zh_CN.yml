@@ -2,7 +2,7 @@ zh_CN:
   site_settings:
     telegram_notifications_enabled: 启用 telegram 通知?
     telegram_access_token: 从 Telegram 官方机器人 BotFather 得到的你自己的机器人的 Token，看起来像 110201543:AAHdqTcvCH1vGWJxfSeofSAs0K5PALDsaw
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "要在 %{site_title} 启用通知，请进入论坛的偏好设置 > 个人资料，输入 'Chat ID'：%{chat_id}"
     known-user: |-
      Hi %{username}, 当你在 %{site_title} 上有新的通知时，我会给你留言。

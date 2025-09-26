@@ -2,7 +2,7 @@ pl_PL:
   site_settings:
     telegram_notifications_enabled: Włączone powiadomienia z telegramu?
     telegram_access_token: Uzyskaj token dostępu do swojego bota
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "Aby otrzymywać powiadomienia %{site_title}, wprowadź 'Chat ID' %{chat_id} w preferencjach użytkownika."
     known-user: |-
      Witaj %{username}, wyślemy ci wiadomość o nowych powiadomieniach na %{site_title}.

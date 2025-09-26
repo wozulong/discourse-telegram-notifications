@@ -2,7 +2,7 @@ es:
   site_settings:
     telegram_notifications_enabled: ¿Activar notificaciones de Telegram?
     telegram_access_token: Obtén el token de acceso del botfather de Telegram
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "Para recibir notificaciones de %{site_title}, introduce el siguiente código: <b>%{chat_id}</b> en tus preferencias de la comunidad"
     known-user: |-
      ¡Hola %{username}! Soy el bot de <b>%{site_title}</b>, te enviaré mensajes cuando tengas nuevas notificaciones.

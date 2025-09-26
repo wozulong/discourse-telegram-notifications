@@ -3,7 +3,7 @@ ru:
     telegram_notifications_enabled: "Включить уведомления в Telegram?"
     telegram_access_token: "Получите токен доступа для вашего бота у @BotFather в Telegram"
     telegram_enabled_notification_types: "Ограничить уведомления в Telegram по типам"
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "Чтобы получать уведомления от %{site_title}, введите 'Chat ID' %{chat_id} в настройках вашего профиля"
     known-user: |-
       Привет, %{username}! Я буду присылать уведомления о новых событиях на %{site_title}. 

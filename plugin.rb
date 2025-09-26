@@ -13,9 +13,9 @@ enabled_site_setting :telegram_notifications_enabled
 after_initialize do
 
   module ::DiscourseTelegramNotifications
-    PLUGIN_NAME ||= "discourse_telegram_notifications".freeze
+    PLUGIN_NAME ||= "discourse-telegram-notifications".freeze
 
-    autoload :TelegramNotifier, "#{Rails.root}/plugins/discourse-telegram-notifications/services/discourse_telegram_notifications/telegram-notifier"
+    autoload :TelegramNotifier, "#{Rails.root}/plugins/discourse-telegram-notifications/services/telegram-notifier"
 
     class Engine < ::Rails::Engine
       engine_name PLUGIN_NAME
@@ -58,14 +58,14 @@ after_initialize do
           user_custom_field = UserCustomField.find_by(name: "telegram_chat_id", value: chat_id)
           user = User.find(user_custom_field.user_id)
           message_text = I18n.t(
-            "discourse_telegram_notifications.known-user",
+            "discourse-telegram-notifications.known-user",
             site_title: CGI::escapeHTML(SiteSetting.title),
             username: user.username
           )
           known_user = true
         rescue Discourse::NotFound, NoMethodError
           message_text = I18n.t(
-            "discourse_telegram_notifications.initial-contact",
+            "discourse-telegram-notifications.initial-contact",
             site_title: CGI::escapeHTML(SiteSetting.title),
             chat_id: chat_id,
           )
@@ -97,17 +97,17 @@ after_initialize do
               errors = result.errors.full_messages.join("\n")
 
               message_text = I18n.t(
-                "discourse_telegram_notifications.reply-failed",
+                "discourse-telegram-notifications.reply-failed",
                 errors: errors
               )
             else
               message_text = I18n.t(
-                "discourse_telegram_notifications.reply-success",
+                "discourse-telegram-notifications.reply-success",
                 post_url: result.post.full_url
               )
             end
           else
-            message_text = I18n.t("discourse_telegram_notifications.reply-error")
+            message_text = I18n.t("discourse-telegram-notifications.reply-error")
           end
 
         end
@@ -129,16 +129,16 @@ after_initialize do
 
         post = Post.find(data[1])
 
-        string = I18n.t("discourse_telegram_notifications.error-unknown-action")
+        string = I18n.t("discourse-telegram-notifications.error-unknown-action")
 
         if data[0] == "like"
           begin
             PostActionCreator.create(user, post, :like)
-            string = I18n.t("discourse_telegram_notifications.like-success")
+            string = I18n.t("discourse-telegram-notifications.like-success")
           rescue PostAction::AlreadyActed
-            string = I18n.t("discourse_telegram_notifications.already-liked")
+            string = I18n.t("discourse-telegram-notifications.already-liked")
           rescue Discourse::InvalidAccess
-            string = I18n.t("discourse_telegram_notifications.like-fail")
+            string = I18n.t("discourse-telegram-notifications.like-fail")
           end
 
           DiscourseTelegramNotifications::TelegramNotifier.answerCallback(params['callback_query']['id'], string)
@@ -152,9 +152,9 @@ after_initialize do
             guardian.ensure_can_delete!(post_action)
             PostAction.remove_act(user, post, post_action_type_id)
 
-            string = I18n.t("discourse_telegram_notifications.unlike-success")
+            string = I18n.t("discourse-telegram-notifications.unlike-success")
           rescue Discourse::NotFound, Discourse::InvalidAccess
-            string = I18n.t("discourse_telegram_notifications.unlike-failed")
+            string = I18n.t("discourse-telegram-notifications.unlike-failed")
           end
 
         end
@@ -216,7 +216,7 @@ after_initialize do
           post = Post.where(post_number: payload[:post_number], topic_id: payload[:topic_id]).first
 
           message_text = I18n.t(
-              "discourse_telegram_notifications.message.#{Notification.types[payload[:notification_type]]}",
+              "discourse-telegram-notifications.message.#{Notification.types[payload[:notification_type]]}",
               site_title: CGI::escapeHTML(SiteSetting.title),
               site_url: Discourse.base_url,
               post_url: Discourse.base_url + payload[:post_url],

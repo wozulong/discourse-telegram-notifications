@@ -54,10 +54,10 @@ module DiscourseTelegramNotifications
       likes = UserAction.where(action_type: UserAction::LIKE, user_id: user.id, target_post_id: post.id).count
 
       if likes > 0
-        likeButtonText = I18n.t("discourse_telegram_notifications.unlike")
+        likeButtonText = I18n.t("discourse-telegram-notifications.unlike")
         likeButtonAction = "unlike:#{post.id}"
       else
-        likeButtonText = I18n.t("discourse_telegram_notifications.like")
+        likeButtonText = I18n.t("discourse-telegram-notifications.like")
         likeButtonAction = "like:#{post.id}"
       end
       post_url = "#{Discourse.base_url}#{post.url(opts={without_slug: true})}"
@@ -65,7 +65,7 @@ module DiscourseTelegramNotifications
         inline_keyboard:[
           [
             {text: likeButtonText, callback_data:likeButtonAction},
-            {text: I18n.t("discourse_telegram_notifications.view_online"), url:post_url},
+            {text: I18n.t("discourse-telegram-notifications.view_online"), url:post_url},
           ]
         ]
       }

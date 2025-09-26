@@ -2,7 +2,7 @@ zh_HK:
   site_settings:
     telegram_notifications_enabled: 啓用 Telegram 通知？
     telegram_access_token: 使用 Telegram 的 BotFather 獲得你的 Bot Access Token
-  discourse_telegram_notifications:
+  discourse-telegram-notifications:
     initial-contact: "如要獲得來自 %{site_title} 的通知，請先在你的用戶偏好中輸入 'Chat ID' %{chat_id}"
     known-user: |-
      你好 %{username}，每當你有新通知時，我會發送訊息給你。
