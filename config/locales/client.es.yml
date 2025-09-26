@@ -2,4 +2,4 @@ es:
   js:
     telegram-notifications:
       preferences-title: "Notificaciones de Telegram"
-      instructions: "Escribe el código que recibiste en Telegram para activar las notificaciones. Deja el campo vacío para deshabilitarlas."
+      instructions: "Introduce el 'Chat ID' del bot (@%{bot_username}). Déjalo vacío para desactivar."

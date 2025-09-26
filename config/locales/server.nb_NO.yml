@@ -2,7 +2,8 @@ nb_NO:
   site_settings:
     telegram_notifications_enabled: Aktivere Telegram-varsler?
     telegram_access_token: Skaff botens *access token* fra Telegram BotFather
-    telegram_enabled_notification_types: Begrens varsel-typene som sendes til Telegram her
+    telegram_bot_username: Brukernavnet til din Telegram-bot, ser ut som my_awesome_bot
+    telegram_enabled_notification_types: Begrens varsler sendt til Telegram med dette utvalget av typer
   discourse-telegram-notifications:
     initial-contact: "For å aktivere varsler fra %{site_title}, legg inn 'Chat ID' %{chat_id} i bruker-innstillingene dine på %{site_title}. Du må mest sannsynlig skrolle ned litt."
     known-user: |-
