@@ -2,4 +2,4 @@ zh_HK:
   js:
     telegram-notifications:
       preferences-title: "Telegram 通知"
-      instructions: "輸入機器人 (@%{bot_username}) 提供的 'Chat ID'，留空則停用。"
+      instructions: "輸入機器人（@%{bot_username}）提供的 'Chat ID'，留空則停用。"
